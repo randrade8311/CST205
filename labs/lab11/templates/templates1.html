@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<!-- templates/templates1.html-->
+
+<ul>
+    {%for item in list1%}
+        <li> {{item}} </li>
+        <ol>
+        {%for i in list1[item]%}
+            <li>{{i}}</li>
+        {% endfor %}
+        </ol>
+    {%endfor%}
+</ul>

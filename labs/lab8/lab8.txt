@@ -1,0 +1,55 @@
+** Task 1 **
+
+Line number:
+
+The location where the class Image begins is 485.
+
+** Task 2 **
+
+Image class docstring:
+
+ """
+    This class represents an image object.  To create
+    :py:class:`~PIL.Image.Image` objects, use the appropriate factory
+    functions.  There's hardly ever any reason to call the Image constructor
+    directly.
+
+    * :py:func:`~PIL.Image.open`
+    * :py:func:`~PIL.Image.new`
+    * :py:func:`~PIL.Image.frombytes`
+    """
+
+** Task 3 **
+
+Image object attribute:
+
+image.thumbnail((size,size))
+image.histogram()
+image.quantize((amount))
+
+Description:
+
+Thumbnail resizes the picture.
+Histogram creates a list containing all 768 color instances.
+Quantize creates a copy of the image with the number of colors passed in.
+
+** Task 4 **
+
+Python Song class definition:
+
+class Song:
+	"""Song Object"""
+	def __init__(self, name, artist, genre, length, album):
+		self.name = name
+		self.artist = artist
+		self.genre = genre
+		self.length = length
+		self.album = album
+
+Instances of the Song class:
+
+song_list = []
+song_list.append(Song('Been Away','Brent Faiyaz','R&B/Soul',224,'F the World'))
+song_list.append(Song('Blue World','Mac Miller','Hip-Hop/Rap',209,'Circles'))
+song_list.append(Song('Sacrifices','Drake','Hip-Hop/Rap',308,'More Life'))
+song_list.append(Song('No Bullets Spent','Spoon','Alternative',221,'Everything Hits at Once')

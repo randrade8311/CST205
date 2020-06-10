@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<title>{{i['title']}}</title>
+<body>
+    <h1>"{{i['title']}}" by {{i['flickr_user']}}</h1>
+    <img src="{{ url_for('static', filename=i['image']) }}" class="img-responsive img-rounded" alt="{{ i['title'] }}"><br>
+    <h3>{{m}} image in {{f}} with width {{w}} and {{h}}</h3>
+    <form action="{{ url_for('home') }}">
+        <button type="submit">Go back to list of images.</button>
+     </form>
+</body>

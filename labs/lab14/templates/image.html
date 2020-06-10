@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<title>Image</title>
+<body>
+    <form class="form-inline" method="POST" action="{{ url_for('image') }}">
+    <div class="form-group">
+        <div class="input-group">
+            <h3>
+                <span class="input-group-addon">Select which day's image to see: </span>
+                <select name="image_select" class="selectpicker form-control">
+                    {% for o in images['dates'] %}
+                        <option value="{{ o }}">{{ o }}</option>
+                    {% endfor %}
+                </select>
+                <br/>
+                <span class="input-group-addon">Select Color map for image: </span>
+                <select name="comp_select" class="selectpicker form-control">
+                    {% for o in data %}
+                    <option value="{{ o }}">{{ o }}</option>
+                    {% endfor %}
+                </select>
+            </h3>
+            </div>            
+        <button type="submit" class="button"><span>GO</span></button></br></br>
+        <h3>****Today's Image {{ today }}*****</h3>
+        <img src="{{ url_for('static', filename=img) }}" alt="Image" style="widows: 35px;0px;height:300px;"/>
+    </div>
+</form>
+</body>
+
+<style>
+h3{
+    font-family: "Times New Roman", Times, serif;
+}
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+div {
+    text-align: center;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #59e49e;
+  border: none;
+  color: rgb(29, 83, 38);
+  text-align: center;
+  font-size: 15px;
+  padding: 8px;
+  width: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>

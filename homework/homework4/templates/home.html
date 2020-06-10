@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<title>Homeowork 4</title>
+
+<body>
+    <h1>Pictures</h1>
+        <a href="{{ url_for('display', id=img1['id']) }}">
+            <h3>{{ img1['title'] }}</h3>
+            <img src="{{ url_for('static', filename=img1['image']) }}" width="200" class="img-responsive img-rounded" alt="{{ img1['title'] }}"><br>
+        </a>
+        <a href="{{ url_for('display', id=img2['id']) }}">
+            <h3>{{ img2['title'] }}</h3>
+            <img src="{{ url_for('static', filename=img2['image']) }}" width="200" class="img-responsive img-rounded" alt="{{ img2['title'] }}"><br>
+        </a>
+        <a href="{{ url_for('display', id=img3['id']) }}">
+            <h3>{{ img3['title'] }}</h3>
+            <img src="{{ url_for('static', filename=img3['image']) }}" width="200" class="img-responsive img-rounded" alt="{{ img3['title'] }}"><br>
+        </a>
+</body>

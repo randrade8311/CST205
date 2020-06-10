@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<title>New Image</title>
+
+<body>
+    <div><br><br>
+    <h3>New Modified Image</h3>
+    <h3>Image from date: {{ date }} <br> With map selected : {{ selected }}</h3>
+    <form class="form-inline" method="POST" action="{{ url_for('home') }}">
+        <button type="submit" class="button"><span>Back</span></button><br>
+    </form>
+    <img src="{{ url_for('static', filename=img) }}" alt="Image" style="widows: 35px;0px;height:300px;">
+    </div>
+</body>
+<style>
+h1{
+    font-family: "Times New Roman", Times, serif;
+}
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+div {
+    text-align: center;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #59e49e;
+  border: none;
+  color: rgb(29, 83, 38);
+  text-align: center;
+  font-size: 15px;
+  padding: 8px;
+  width: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
